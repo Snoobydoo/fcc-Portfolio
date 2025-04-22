@@ -79,12 +79,12 @@ hr {
 }
 
 .skill i {
-  font-size: 50px; /* Taille de l'icône */
-  padding: 20px;   /* Espace autour de l'icône pour la rendre ronde */
-  border-radius: 50%; /* Rend l'icône ronde */
-  background-color: #cdb79e; /* Couleur de fond */
-  color: #8b0000;     /* Couleur de l'icône */
-  transition: transform 0.3s, background-color 0.3s; /* Animation */
+  font-size: 50px;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: #fafad2;
+  color: #8b0000;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .skill i:hover {
@@ -94,7 +94,7 @@ hr {
 .skill p {
   margin-top: 10px;
   font-size: 25px;
-  color: #cdb79e;
+  color: #fafad2;
 }
 
 #projects {
