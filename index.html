@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lanf="fr">
+  <head>
+    <link href="https://fonts.cdnfonts.com/css/h-houji" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/takiyo" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <title>Théo Evanno - Portfolio</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <a href="#welcome-section">A Propos</a>
+      <a href="#projects">Projets</a>
+      <a href="#contacts">Me Contacter</a>
+    </nav>
+    <section id="welcome-section">
+      <h1>Théo Evanno</h1>
+      <h2>Développeur Web</h2>
+    </section>
+    <section id="projects">
+      <h1>Mes projets&nbsp;:</h1>
+      <div id="project-grid">
+        <a class="project-tile" href="">
+          <img alt="project 1 preview" src="Survey Form.png" />
+          <p>Formulaire d'inscription</p>
+        </a>
+        <a class="project-tile" href="">
+          <img alt="project 2 preview" src="Tribute Page.png" />
+          <p>Page Hommages</p>
+        </a>
+        <a class="project-tile" href="">
+          <img alt="project 3 preview" src="Documentation Page.png" />
+          <p>Documentation</p>
+        </a>
+        <a class="project-tile" href="">
+          <img alt="project 4 preview" />
+          <p>Projet 4</p>
+        </a>
+        <a class="project-tile" href="">
+          <img alt="project 5 preview" />
+          <p>Projet 5</p>
+        </a>
+      </div>
+      <h1>Me contacter&nbsp;:</h1>
+      <form id="contacts">
+        <label></label>
+        <label for="name_box">Nom
+          <input  required id="name_box" type="text" class="contact_input" placeholder="Votre Nom"></input>
+        </label>
+        <label for="email_box">Email
+          <input required id="email_box" type="email" class="contact_input" placeholder="Votre Email"></input>
+        </label>
+        <label for="message_box">Message
+          <input id="message_box" type="text" class="contact_input" placeholder="Message"></input>
+        </label>
+        <button type="submit" id="submit_button">ENVOYER</button>
+      </form>
+    </section>
+    <footer>
+      <a id="profile-link"></a>
+    </footer>
+  </body>
+</html>
