@@ -1,25 +1,21 @@
-# Portfolio - freeCodeCamp
+# fcc-Portfolio ( 🌐 version ) 
 
-Ceci est le dernier projet nécessaire à la certification "Responsive Web Designer" de freeCodeCamp, il s'agit d'un Portfolio.
+🔗 **Live Website**: [https://snoobydoo.github.io/fcc-Portfolio/](https://snoobydoo.github.io/fcc-Portfolio/)
 
-## À propos
+> ✨ *In this project, I made some custom modifications to the original instructions to achieve a design that reflects my personal style and preferences.*
 
-Ce projet n'est pas terminé et est sujet a des modifications au fil du temps.
+---
+## 🎯 Project Objective
 
-### Pré-requis
+The goal of this project is to build a **Portfolio** as part of the **Responsive Web Design** on [freeCodeCamp](https://www.freecodecamp.org/).
 
-Pour modifier ce projet il est recommandé d'utiliser :
 
-- Visual StudioCode
-- Un navigateur adapté
-- La page du projet en question sur freeCodeCamp (un compte peut être requis) : https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage
+## 📫 Contact
 
-## Fabriqué avec
+- GitHub: [@Snoobydoo](https://github.com/Snoobydoo)  
+- Mail : [Email](theo_perso@live.fr)
 
-- Visual StudioCode
+---
 
-## Auteurs
+⭐ *Thanks for checking out this project! Feel free to leave a star if you found it helpful or inspiring.*
 
-* **Théo Evanno** (https://github.com/theoevanno)
-
-Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
