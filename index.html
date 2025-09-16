@@ -1,84 +1,131 @@
 <!DOCTYPE html>
-<html lanf="fr">
+<html lang="fr">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Théo Evanno, développeur web spécialisé en HTML5 et CSS3">
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link href="https://fonts.cdnfonts.com/css/h-houji" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/takiyo" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <meta charset="UTF-8" />
     <title>Théo Evanno - Portfolio</title>
   </head>
   <body>
     <nav id="navbar">
-      <a href="#welcome-section">A Propos</a>
+      <a href="#welcome-section">Accueil</a>
+      <a href="#about-section">À Propos</a>
+      <a href="#skills-section">Compétences</a>
       <a href="#projects">Projets</a>
-      <a href="#contacts">Me Contacter</a>
+      <a href="#contact-section">Contact</a>
     </nav>
+    
     <section id="welcome-section">
       <h1>Théo Evanno</h1>
       <h2>Développeur Web</h2>
-      <div class="skills">
-        <div class="skill">
-          <i class="fab fa-html5"></i>
-          <p>HTML 5</p>
-        </div>
-        <div class="skill">
-          <i class="fab fa-css3-alt"></i>
-          <p>CSS 3</p>
+    </section>
+    
+    <section id="about-section">
+      <div class="container">
+        <h2>À propos de moi</h2>
+        <p>
+          Développeur web junior de 26 ans basé à Agen, en France, je me passionne pour la création 
+          d'expériences numériques uniques et engageantes. Mon approche du développement puise son inspiration 
+          dans mes grandes passions : la culture japonaise, les jeux vidéo et le cinéma.
+        </p>
+        <p>
+          Ces univers riches en esthétique et en storytelling nourrissent ma créativité et influencent 
+          directement la conception de mes projets. J'aime allier la précision et l'élégance du design 
+          japonais à l'interactivité immersive du gaming pour créer des interfaces web modernes et captivantes.
+        </p>
+      </div>
+    </section>
+    
+    <section id="skills-section">
+      <div class="container">
+        <h2>Mes compétences</h2>
+        <div class="skills">
+          <div class="skill">
+            <i class="fab fa-html5"></i>
+            <p>HTML 5</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-css3-alt"></i>
+            <p>CSS 3</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-js-square"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-react"></i>
+            <p>React</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-database"></i>
+            <p>MongoDB</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </div>
         </div>
       </div>
     </section>
+    
     <section id="projects">
       <h1>Mes projets&nbsp;:</h1>
       <div id="project-grid">
         <a class="project-tile" href="https://snoobydoo.github.io/fcc-Survey-Form/" target="_blank">
-          <img alt="project 1 preview" src="Survey Form.png" />
+          <img alt="Aperçu du formulaire d'inscription - interface utilisateur moderne" src="Survey Form.png" />
           <p>Formulaire d'inscription</p>
         </a>
         <a class="project-tile" href="https://snoobydoo.github.io/fcc-Tribute-Page/" target="_blank">
-          <img alt="project 2 preview" src="Tribute Page.png" />
-          <p>Page Hommages</p>
+          <img alt="Aperçu de la page hommage - design épuré et informatif" src="Tribute Page.png" />
+          <p>Page Hommage</p>
         </a>
         <a class="project-tile" href="https://snoobydoo.github.io/fcc-Documentation-Page/" target="_blank">
-          <img alt="project 3 preview" src="Documentation Page.png" />
+          <img alt="Aperçu de la page de documentation - structure claire et navigation intuitive" src="Documentation Page.png" />
           <p>Documentation</p>
         </a>
-        <a class="project-tile" href="">
-          <img alt="project 4 preview" />
-          <p>Projet 4</p>
+        <a class="project-tile" href="https://tic-tac-toe-rosy-eta.vercel.app/" aria-label="Projet en cours de développement">
+          <img alt="Placeholder pour projet en développement" src="tic-tac-toe.png" />
+          <p>Tic-Tac-Toe</p>
         </a>
-        <a class="project-tile" href="">
-          <img alt="project 5 preview" />
-          <p>Projet 5</p>
+        <a class="project-tile" href="https://snoobydoo.github.io/fcc-Palindrome-Checker/" aria-label="Projet à venir">
+          <img alt="Placeholder pour futur projet" src="palindrome-checker.png" />
+          <p>Palindrome Checker</p>
         </a>
       </div>
-      <h1>Me contacter&nbsp;:</h1>
+    </section>
+    
+    <section id="contact-section">
+      <h1>Une idée de projet&nbsp;?</h1>
       <form id="contacts">
-        <label></label>
         <label for="name_box">Nom
-          <input  required id="name_box" type="text" class="contact_input" placeholder="Votre Nom"></input>
+          <input required id="name_box" type="text" class="contact_input" placeholder="Votre Nom">
         </label>
         <label for="email_box">Email
-          <input required id="email_box" type="email" class="contact_input" placeholder="Votre Email"></input>
+          <input required id="email_box" type="email" class="contact_input" placeholder="Votre Email">
         </label>
         <label for="message_box">Message
-          <textarea id="message_box" rows="4" type="text" class="contact_input" placeholder="Message"></textarea>
+          <textarea required id="message_box" rows="4" class="contact_input" placeholder="Votre message"></textarea>
         </label>
         <button type="submit" id="submit_button">ENVOYER</button>
       </form>
     </section>
+    
     <footer>
       <div class="footer_content">
-      <div class="social_icons">
-        <a href="https://github.com/Snoobydoo" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-        <a>
-          <i class="fab fa-linkedin"></i>
-        </a>
+        <div class="social_icons">
+          <a href="https://github.com/Snoobydoo" target="_blank" aria-label="Profil GitHub de Théo Evanno">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/theo-evanno" target="_blank" aria-label="Profil LinkedIn de Théo Evanno">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
         <small>© 2025 Théo Evanno. Tous droits réservés.</small>
       </div>
