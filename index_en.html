@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Théo Evanno, web developer specialized in HTML5 and CSS3">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link href="https://fonts.cdnfonts.com/css/h-houji" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/takiyo" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Théo Evanno - Portfolio</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="nav-links">
+        <a href="#welcome-section">Home</a>
+        <a href="#about-section">About</a>
+        <a href="#skills-section">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact-section">Contact</a>
+      </div>
+      <div class="language-switcher">
+        <a href="index.html" class="lang-btn" aria-label="Passer au français">
+          <i class="fas fa-globe"></i>
+          <span>FR</span>
+        </a>
+      </div>
+    </nav>
+    
+    <section id="welcome-section">
+      <canvas id="particle-canvas"></canvas>
+      <div class="welcome-content">
+        <h1>Théo Evanno</h1>
+        <h2>Web Developer</h2>
+      </div>
+    </section>
+    
+    <section id="about-section">
+      <div class="container">
+        <h2>About me</h2>
+        <p id="typewriter-text-1" class="typewriter-paragraph">
+          <!-- Le texte sera écrit dynamiquement ici -->
+        </p>
+        <p id="typewriter-text-2" class="typewriter-paragraph">
+          <!-- Le texte sera écrit dynamiquement ici -->
+        </p>
+      </div>
+    </section>
+    
+    <section id="skills-section">
+      <div class="container">
+        <h2>My skills</h2>
+        <div class="skills">
+          <div class="skill">
+            <i class="fab fa-html5"></i>
+            <p>HTML 5</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-css3-alt"></i>
+            <p>CSS 3</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-js-square"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-react"></i>
+            <p>React</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-database"></i>
+            <p>MongoDB</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="projects">
+      <h1>My projects:</h1>
+      <div id="project-grid">
+        <a class="project-tile" href="https://snoobydoo.github.io/fcc-Survey-Form/" target="_blank">
+          <img alt="Preview of registration form - modern user interface" src="Survey Form.png" />
+          <p>Registration Form</p>
+        </a>
+        <a class="project-tile" href="https://snoobydoo.github.io/fcc-Tribute-Page/" target="_blank">
+          <img alt="Preview of tribute page - clean and informative design" src="Tribute Page.png" />
+          <p>Tribute Page</p>
+        </a>
+        <a class="project-tile" href="https://snoobydoo.github.io/fcc-Documentation-Page/" target="_blank">
+          <img alt="Preview of documentation page - clear structure and intuitive navigation" src="Documentation Page.png" />
+          <p>Documentation</p>
+        </a>
+        <a class="project-tile" href="https://tic-tac-toe-rosy-eta.vercel.app/" target="_blank">
+          <img alt="Preview of Tic-Tac-Toe game" src="tic-tac-toe.png" />
+          <p>Tic-Tac-Toe</p>
+        </a>
+        <a class="project-tile" href="https://snoobydoo.github.io/fcc-Palindrome-Checker/" target="_blank">
+          <img alt="Preview of Palindrome Checker" src="palindrome-checker.png" />
+          <p>Palindrome Checker</p>
+        </a>
+      </div>
+    </section>
+    
+    <section id="contact-section">
+      <h1>Have a project idea?</h1>
+      <form id="contacts">
+        <label for="name_box">Name
+          <input required id="name_box" type="text" class="contact_input" placeholder="Your Name">
+        </label>
+        <label for="email_box">Email
+          <input required id="email_box" type="email" class="contact_input" placeholder="Your Email">
+        </label>
+        <label for="message_box">Message
+          <textarea required id="message_box" rows="4" class="contact_input" placeholder="Your message"></textarea>
+        </label>
+        <button type="submit" id="submit_button">SEND</button>
+      </form>
+    </section>
+    
+    <footer>
+      <div class="footer_content">
+        <div class="social_icons">
+          <a href="https://github.com/Snoobydoo" target="_blank" aria-label="Théo Evanno's GitHub Profile">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/theo-evanno" target="_blank" aria-label="Théo Evanno's LinkedIn Profile">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+        <small>© 2025 Théo Evanno. All rights reserved.</small>
+      </div>
+    </footer>
+  </body>
+  <script>
+    // Système de particules pour la section d'accueil
+    class ParticleSystem {
+      constructor() {
+        this.canvas = document.getElementById('particle-canvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.mouseX = 0;
+        this.mouseY = 0;
+        
+        this.init();
+        this.createParticles();
+        this.animate();
+        
+        // Event listeners
+        window.addEventListener('resize', () => this.init());
+        document.addEventListener('mousemove', (e) => {
+          this.mouseX = e.clientX;
+          this.mouseY = e.clientY;
+        });
+      }
+      
+      init() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+      }
+      
+      createParticles() {
+        const particleCount = Math.floor((this.canvas.width * this.canvas.height) / 15000);
+        
+        for (let i = 0; i < particleCount; i++) {
+          this.particles.push({
+            x: Math.random() * this.canvas.width,
+            y: Math.random() * this.canvas.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            size: Math.random() * 2 + 1,
+            opacity: Math.random() * 0.5 + 0.2,
+            originalOpacity: Math.random() * 0.5 + 0.2
+          });
+        }
+      }
+      
+      updateParticles() {
+        this.particles.forEach(particle => {
+          // Mouvement basique
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+          
+          // Interaction avec la souris
+          const dx = this.mouseX - particle.x;
+          const dy = this.mouseY - particle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 100) {
+            const force = (100 - distance) / 100;
+            particle.vx += (dx / distance) * force * 0.01;
+            particle.vy += (dy / distance) * force * 0.01;
+            particle.opacity = Math.min(particle.originalOpacity + force * 0.5, 1);
+          } else {
+            particle.opacity = particle.originalOpacity;
+          }
+          
+          // Réinitialisation des particules qui sortent de l'écran
+          if (particle.x < 0) particle.x = this.canvas.width;
+          if (particle.x > this.canvas.width) particle.x = 0;
+          if (particle.y < 0) particle.y = this.canvas.height;
+          if (particle.y > this.canvas.height) particle.y = 0;
+          
+          // Friction
+          particle.vx *= 0.98;
+          particle.vy *= 0.98;
+        });
+      }
+      
+      drawParticles() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        this.particles.forEach(particle => {
+          this.ctx.beginPath();
+          this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+          this.ctx.fillStyle = `rgba(220, 20, 60, ${particle.opacity})`;
+          this.ctx.fill();
+          
+          // Effet de lueur
+          this.ctx.shadowBlur = 10;
+          this.ctx.shadowColor = 'rgba(220, 20, 60, 0.5)';
+          this.ctx.fill();
+          this.ctx.shadowBlur = 0;
+        });
+        
+        // Connexions entre particules proches
+        this.drawConnections();
+      }
+      
+      drawConnections() {
+        for (let i = 0; i < this.particles.length; i++) {
+          for (let j = i + 1; j < this.particles.length; j++) {
+            const dx = this.particles[i].x - this.particles[j].x;
+            const dy = this.particles[i].y - this.particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 120) {
+              const opacity = (120 - distance) / 120 * 0.2;
+              this.ctx.beginPath();
+              this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+              this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+              this.ctx.strokeStyle = `rgba(220, 20, 60, ${opacity})`;
+              this.ctx.lineWidth = 0.5;
+              this.ctx.stroke();
+            }
+          }
+        }
+      }
+      
+      animate() {
+        this.updateParticles();
+        this.drawParticles();
+        requestAnimationFrame(() => this.animate());
+      }
+    }
+
+    // Effet de machine à écrire pour la section À propos
+    class TypewriterEffect {
+      constructor() {
+        this.texts = [
+          "26-year-old junior web developer based in Agen, France, I'm passionate about creating unique and engaging digital experiences. My development approach draws inspiration from my great passions: Japanese culture, video games and cinema.",
+          "These universes rich in aesthetics and storytelling nourish my creativity and directly influence the design of my projects. Each line of code then becomes an opportunity to experiment with subtle animations, smooth transitions and interfaces that tell a story as much as they solve a problem."
+        ];
+        
+        this.currentTextIndex = 0;
+        this.currentCharIndex = 0;
+        this.isDeleting = false;
+        this.typeSpeed = 30;
+        this.deleteSpeed = 20;
+        this.pauseTime = 1000;
+        
+        this.setupIntersectionObserver();
+      }
+      
+      setupIntersectionObserver() {
+        const aboutSection = document.getElementById('about-section');
+        const options = {
+          threshold: 0.3,
+          rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              this.startTypewriting();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, options);
+        
+        observer.observe(aboutSection);
+      }
+      
+      startTypewriting() {
+        this.typeText();
+      }
+      
+      typeText() {
+        const currentParagraph = document.getElementById(`typewriter-text-${this.currentTextIndex + 1}`);
+        const currentText = this.texts[this.currentTextIndex];
+        
+        if (this.currentCharIndex < currentText.length) {
+          currentParagraph.textContent = currentText.substring(0, this.currentCharIndex + 1);
+          
+          // Ajouter le curseur clignotant
+          currentParagraph.innerHTML = currentParagraph.textContent + '<span class="cursor">|</span>';
+          
+          this.currentCharIndex++;
+          setTimeout(() => this.typeText(), this.typeSpeed);
+        } else {
+          // Supprimer le curseur et passer au paragraphe suivant
+          currentParagraph.innerHTML = currentText;
+          
+          if (this.currentTextIndex < this.texts.length - 1) {
+            this.currentTextIndex++;
+            this.currentCharIndex = 0;
+            setTimeout(() => this.typeText(), this.pauseTime);
+          } else {
+            // Animation terminée
+            this.addFinalCursor();
+          }
+        }
+      }
+      
+      addFinalCursor() {
+        const lastParagraph = document.getElementById(`typewriter-text-${this.texts.length}`);
+        setTimeout(() => {
+          lastParagraph.innerHTML += '<span class="cursor blink">|</span>';
+        }, 500);
+      }
+    }
+    
+    // Initialiser les systèmes quand la page est chargée
+    document.addEventListener('DOMContentLoaded', () => {
+      new ParticleSystem();
+      new TypewriterEffect();
+    });
+  </script>
+</html>
